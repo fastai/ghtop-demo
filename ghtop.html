@@ -102,7 +102,7 @@ nb_path: "nbs/00_ghtop.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>First copy your one-time code: <span class="ansi-yellow-fg">0F24-0D10</span>
+<pre>First copy your one-time code: <span class="ansi-yellow-fg">004F-A5D6</span>
 Then visit https://github.com/login/device in your browser, and paste the code when prompted.
 Waiting for authorization...Authentication not complete!
 </pre>
@@ -185,86 +185,6 @@ Waiting for authorization...Authentication not complete!
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="fetch_events" class="doc_header"><code>fetch_events</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L62" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>fetch_events</code>(<strong><code>types</code></strong>=<em><code>None</code></em>)</p>
-</blockquote>
-<p>Generate an infinite stream of events optionally filtered to <code>types</code></p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="/ghtop/ghtop.html#api.activity.list_public_events"><code>api.activity.list_public_events</code></a> returns 30 events at a time, and <a href="/ghtop/ghtop.html#fetch_events"><code>fetch_events</code></a> turns that into an infinite length stream. We can take a look at the most recent event to see what type it is:</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ev</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">fetch_events</span><span class="p">())</span>
-<span class="n">ev</span><span class="o">.</span><span class="n">type</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;ForkEvent&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
 </div>
     {% endraw %}
 
@@ -286,7 +206,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="print_event" class="doc_header"><code>print_event</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L92" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>print_event</code>(<strong><code>e</code></strong>, <strong><code>commits_counter</code></strong>)</p>
+<h4 id="print_event" class="doc_header"><code>print_event</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L81" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>print_event</code>(<strong><code>e</code></strong>, <strong><code>commits_counter</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -308,7 +228,7 @@ Waiting for authorization...Authentication not complete!
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can pretty print a selection of event types using <a href="/ghtop/ghtop.html#print_event"><code>print_event</code></a> (note that <a href="/ghtop/ghtop.html#print_event"><code>print_event</code></a> filters out most bot activity), eg:</p>
+<p>We can pretty print a selection of event types using <a href="/ghtop.html#print_event"><code>print_event</code></a>, e.g:</p>
 
 </div>
 </div>
@@ -320,8 +240,8 @@ Waiting for authorization...Authentication not complete!
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gen</span> <span class="o">=</span> <span class="n">fetch_events</span><span class="p">(</span><span class="n">types</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;IssuesEvent&#39;</span><span class="p">,</span><span class="s1">&#39;ReleaseEvent&#39;</span><span class="p">,</span><span class="s1">&#39;PullRequestEvent&#39;</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">islice</span><span class="p">(</span><span class="n">gen</span><span class="p">,</span> <span class="mi">30</span><span class="p">):</span> <span class="n">print_event</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gen</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">fetch_events</span><span class="p">(</span><span class="n">types</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;IssuesEvent&#39;</span><span class="p">,</span><span class="s1">&#39;ReleaseEvent&#39;</span><span class="p">,</span><span class="s1">&#39;PullRequestEvent&#39;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">islice</span><span class="p">(</span><span class="n">gen</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span> <span class="n">print_event</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -334,18 +254,26 @@ Waiting for authorization...Authentication not complete!
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-yellow-fg">✨ TingluoHuang opened a pull request on repo actions-canary/ForkP (&#34;PR from Fork...&#34;)</span>
-<span class="ansi-yellow-fg">✨ danielSanchez98 opened a pull request on repo danielSanchez98/soci (&#34;Social Media Dashboard Dark Mode...&#34;)</span>
-⭐ StephSako closed issue # 15 on repo StephSako/PingBracke (&#34;Dynamic bracket according to poules/players number...&#34;)
-<span class="ansi-yellow-fg">✨ ZigZag48 opened a pull request on repo ZigZag48/QuizApp (&#34;header...&#34;)</span>
-<span class="ansi-green-fg">✔ joshfriend closed a pull request on repo pyenv/pyenv (&#34;Docker config for testing python-build...&#34;)</span>
-📫 ltabis opened issue # 11 on repo ltabis/KMU-CG1-mesh- (&#34;Renderer options...&#34;)
-<span class="ansi-yellow-fg">✨ cindie-fff opened a pull request on repo virtualgoodsdealer/v (&#34;Updated language in submission page from web show ...&#34;)</span>
-<span class="ansi-yellow-fg">✨ notrabe opened a pull request on repo notrabe/node-db4-pro (&#34;....&#34;)</span>
-<span class="ansi-yellow-fg">✨ jamescbaldwin opened a pull request on repo jamescbaldwin/PROJEC (&#34;Nihal...&#34;)</span>
-<span class="ansi-green-fg">✔ AngelFQC closed a pull request on repo mozillaperu/particip (&#34;update poll...&#34;)</span>
-<span class="ansi-green-fg">✔ 19ATF72 closed a pull request on repo 19ATF72/AAA-project (&#34;updating git ignore...&#34;)</span>
-⭐ rlorenzo closed issue # 138 on repo ucla/moodle-mod_zoom (&#34;PHP catchable fatal error...&#34;)
+<pre>📫 erfanmola opened issue # 26 on repo gonzaarcr/Fildem (&#34;Global Menu for Jetbrains Apps...&#34;)
+📫 baidua opened issue # 4436 on repo baidua/xmvavaciof (&#34;福州高端喝茶联系方式品茶外围上课...&#34;)
+📫 trnphocgqe opened issue # 1533 on repo trnphocgqe/tvtxtvxtv (&#34;关于江门哪里可以开加油发票-江门本地宝...&#34;)
+📫 limjinsun opened issue # 1 on repo DestyNova/advent_of_ (&#34;Day1 solution....&#34;)
+📫 fghyfuy36 opened issue # 113646 on repo ouyanxia2/hgmgmg (&#34;茂名教扑克牌手法...&#34;)
+📫 bbb5426647 opened issue # 1617 on repo bbb5426647/uuigzoyap (&#34;澳洲幸运5可靠吗...&#34;)
+📫 95sex opened issue # 614 on repo 95sex/ofrqtowfts (&#34;极速赛车微信的群app下注...&#34;)
+📫 Misly16 opened issue # 4 on repo ourcord/ourcord (&#34;Find fix for zlib install....&#34;)
+📫 hvva183 opened issue # 2355 on repo hvva183/huwchryzgn (&#34;关于济南哪里可以开具餐饮费发票-济南本地宝...&#34;)
+📫 hvva183 opened issue # 2345 on repo hvva183/ktaaonudut (&#34;关于成都哪里可以开具餐饮费发票-成都本地宝...&#34;)
+📫 bbb5426647 opened issue # 1625 on repo bbb5426647/dkegwbigm (&#34;安全的一分钟加拿大28微信群...&#34;)
+📫 ok0003 opened issue # 113642 on repo ouyanxia2/hgmgmg (&#34;关于)文山代开三甲医院诊断证明【╋薇/芯:xrj3781】...&#34;)
+⭐ TNelen closed issue # 242 on repo TNelen/BlackBox (&#34;change all icons to OMIcons...&#34;)
+📫 hvva183 opened issue # 2362 on repo hvva183/oowsiqqguw (&#34;关于宁波哪里可以开具餐饮费发票-宁波本地宝...&#34;)
+📫 hvva183 opened issue # 2355 on repo hvva183/qthmkvmgtf (&#34;关于杭州哪里可以开具餐饮费发票-杭州本地宝...&#34;)
+<span class="ansi-green-fg">✔ AliasIO closed a pull request on repo AliasIO/wappalyzer (&#34;Add Aimtell/Marketing automation...&#34;)</span>
+<span class="ansi-green-fg">✔ akemimeka closed a pull request on repo KarinaFS/battle-win (&#34;Mergeia a master e realiza melhoras no Readme...&#34;)</span>
+📫 hvva183 opened issue # 2371 on repo hvva183/hcigoxucgz (&#34;关于长春哪里可以开具餐饮费发票-长春本地宝...&#34;)
+📫 hvva183 opened issue # 2357 on repo hvva183/guubsqomuj (&#34;关于苏州哪里可以开具餐饮费发票-苏州本地宝...&#34;)
+📫 hvva183 opened issue # 2352 on repo hvva183/ltrubzaaap (&#34;关于沈阳哪里可以开具餐饮费发票-沈阳本地宝...&#34;)
 </pre>
 </div>
 </div>
@@ -367,9 +295,9 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="tail_events" class="doc_header"><code>tail_events</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L104" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tail_events</code>()</p>
+<h4 id="tail_events" class="doc_header"><code>tail_events</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L88" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tail_events</code>(<strong><code>evt</code></strong>)</p>
 </blockquote>
-<p>Print events from <a href="/ghtop/ghtop.html#fetch_events"><code>fetch_events</code></a> along with a counter of push events</p>
+<p>Print events from <code>fetch_events</code> along with a counter of push events</p>
 
 </div>
 
@@ -399,39 +327,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="batch_events" class="doc_header"><code>batch_events</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L111" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>batch_events</code>(<strong><code>size</code></strong>, <strong><code>types</code></strong>=<em><code>None</code></em>)</p>
-</blockquote>
-<p>Generate an infinite stream of batches of events of <code>size</code> optionally filtered to <code>types</code></p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="watch_users" class="doc_header"><code>watch_users</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L117" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>watch_users</code>()</p>
+<h4 id="watch_users" class="doc_header"><code>watch_users</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L96" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>watch_users</code>(<strong><code>evts</code></strong>)</p>
 </blockquote>
 <p>Print a table of the users with the most events</p>
 
@@ -463,7 +359,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="quad_logs" class="doc_header"><code>quad_logs</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L135" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>quad_logs</code>()</p>
+<h4 id="quad_logs" class="doc_header"><code>quad_logs</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L114" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>quad_logs</code>(<strong><code>evts</code></strong>)</p>
 </blockquote>
 <p>Print 4 panels, showing most recent issues, commits, PRs, and releases</p>
 
@@ -495,7 +391,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="simple" class="doc_header"><code>simple</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L152" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>simple</code>()</p>
+<h4 id="simple" class="doc_header"><code>simple</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L131" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>simple</code>(<strong><code>evts</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -526,7 +422,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="main" class="doc_header"><code>main</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L164" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>main</code>(<strong><code>mode</code></strong>:"Operation mode to run")</p>
+<h4 id="main" class="doc_header"><code>main</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L144" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>main</code>(<strong><code>mode</code></strong>:"Operation mode to run", <strong><code>include_bots</code></strong>:"Include bots (there's a lot of them!)"=<em><code>False</code></em>, <strong><code>types</code></strong>:"Comma-separated types of event to include (e.g PushEvent)"=<em><code>''</code></em>, <strong><code>filt</code></strong>:"Filtering method"=<em><code>None</code></em>, <strong><code>filtval</code></strong>:"Value to filter by (for <code>repo</code> use format <code>owner/repo</code>)"=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
