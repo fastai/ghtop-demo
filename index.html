@@ -58,8 +58,41 @@ nb_path: "nbs/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Run <code>ghtop -h</code> to view the help. There are 4 views you can choose:</p>
-<h3 id="ghtop-simple"><code>ghtop simple</code><a class="anchor-link" href="#ghtop-simple"> </a></h3><p>A simple dump to your console of all events as they happen.</p>
+<p>Run <code>ghtop -h</code> to view the help:</p>
+<div class="highlight"><pre><span></span>$ ghtop -h
+usage: ghtop <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>--include_bots<span class="o">]</span> <span class="o">[</span>--types TYPES<span class="o">]</span> <span class="o">[</span>--filt <span class="o">{</span>user,repo,org<span class="o">}]</span> <span class="o">[</span>--filtval FILTVAL<span class="o">]</span>
+             <span class="o">{</span>tail,quad,users,simple<span class="o">}</span>
+
+positional arguments:
+  <span class="o">{</span>tail,quad,users,simple<span class="o">}</span>  Operation mode to run
+
+optional arguments:
+  -h, --help                show this <span class="nb">help</span> message and <span class="nb">exit</span>
+  --include_bots            Include bots <span class="o">(</span>there is a lot of them!<span class="o">)</span> <span class="o">(</span>default: False<span class="o">)</span>
+  --types TYPES             Comma-separated types of event to include <span class="o">(</span>e.g PushEvent<span class="o">)</span>
+  --filt <span class="o">{</span>user,repo,org<span class="o">}</span>    Filtering method
+  --filtval FILTVAL         Value to filter by <span class="o">(</span><span class="k">for</span> <span class="sb">`</span>repo<span class="sb">`</span> use format <span class="sb">`</span>owner/repo<span class="sb">`</span><span class="o">)</span>
+</pre></div>
+<p>There are 4 views you can choose: <code>ghtop simple</code>, <code>ghtop tail</code>, <code>ghtop quad</code>, or <code>ghtop users</code>. Each are shown and described below. All views have the following options:</p>
+<ul>
+<li><code>--include_bots</code>: By default events that appear to be from bots are excluded. Add this flag to include them</li>
+<li><code>--types TYPES</code>: Optional comma-separated list of event types to include (defaults to all types). For a full list of types, see the GitHub <a href="https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/github-event-types">event types docs</a></li>
+<li><code>--filt</code> and <code>--filtval</code>: Optionally filter events to just those from one of: <code>user</code>, <code>repo</code>, or <code>org</code>, depending on <code>filt</code>. <code>filtval</code> is the value to filter by. See the <a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/activity#list-public-events">GitHub docs</a> for details on the public event API calls used.</li>
+</ul>
+<p><strong>Important note</strong>: while running, <a href="/ghtop.html"><code>ghtop</code></a> will make about 5 API calls per second. GitHub has a quota of 5000 calls per hour. When there are 1000 calls left, <a href="/ghtop.html"><code>ghtop</code></a> will show a warning on every call.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="ghtop-simple">ghtop simple<a class="anchor-link" href="#ghtop-simple"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A simple dump to your console of all events as they happen.</p>
 <p><img src="https://user-images.githubusercontent.com/346999/101861674-79e7df80-3b25-11eb-92d3-f888843f4aa2.png" width="500" style="max-width: 500px"></p>
 
 </div>
@@ -67,7 +100,13 @@ nb_path: "nbs/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="ghtop-tail"><code>ghtop tail</code><a class="anchor-link" href="#ghtop-tail"> </a></h3><p>Like <a href="/ghtop.html#simple"><code>simple</code></a>, but removes most bots, and only includes releases, issues and PRs (open, close, and comment events). A summary of the frequency of push events is also shown at the bottom of the screen.</p>
+<h3 id="ghtop-tail">ghtop tail<a class="anchor-link" href="#ghtop-tail"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Like <a href="/ghtop.html#simple"><code>simple</code></a>, but removes most bots, and only includes releases, issues and PRs (open, close, and comment events). A summary of the frequency of push events is also shown at the bottom of the screen.</p>
 <p><img src="https://user-images.githubusercontent.com/346999/101861658-69376980-3b25-11eb-96ef-9d68f075abf7.png" width="700" style="max-width: 700px"></p>
 
 </div>
@@ -75,7 +114,13 @@ nb_path: "nbs/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="ghtop-quad"><code>ghtop quad</code><a class="anchor-link" href="#ghtop-quad"> </a></h3><p>The same information as <code>tail</code>, but in a split window showing separately PRs, issues, pushes, and releases. This view does not remove bot activity.</p>
+<h3 id="ghtop-quad">ghtop quad<a class="anchor-link" href="#ghtop-quad"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The same information as <code>tail</code>, but in a split window showing separately PRs, issues, pushes, and releases. This view does not remove bot activity.</p>
 <p><img src="https://user-images.githubusercontent.com/346999/101861560-2ecdcc80-3b25-11eb-9fba-25382b2df65f.png" width="900" style="max-width: 900px"></p>
 
 </div>
@@ -83,7 +128,13 @@ nb_path: "nbs/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="ghtop-users"><code>ghtop users</code><a class="anchor-link" href="#ghtop-users"> </a></h3><p>A summary of activity for the most active current users, including bots.</p>
+<h3 id="ghtop-users">ghtop users<a class="anchor-link" href="#ghtop-users"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A summary of activity for the most active current users.</p>
 <p><img src="https://user-images.githubusercontent.com/346999/101861612-4b6a0480-3b25-11eb-8124-19bb2434c27e.png" width="500" style="max-width: 500px"></p>
 <hr>
 
