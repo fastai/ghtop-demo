@@ -54,7 +54,7 @@ nb_path: "nbs/00_ghtop.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="github_auth_device" class="doc_header"><code>github_auth_device</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L23" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>github_auth_device</code>(<strong><code>wb</code></strong>=<em><code>''</code></em>, <strong><code>n_polls</code></strong>=<em><code>9999</code></em>)</p>
+<h4 id="github_auth_device" class="doc_header"><code>github_auth_device</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L22" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>github_auth_device</code>(<strong><code>wb</code></strong>=<em><code>''</code></em>, <strong><code>n_polls</code></strong>=<em><code>9999</code></em>)</p>
 </blockquote>
 <p>Authenticate with GitHub, polling up to <code>n_polls</code> times to wait for completion</p>
 
@@ -102,7 +102,7 @@ nb_path: "nbs/00_ghtop.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>First copy your one-time code: <span class="ansi-yellow-fg">004F-A5D6</span>
+<pre>First copy your one-time code: <span class="ansi-yellow-fg">8C6B-E7F9</span>
 Then visit https://github.com/login/device in your browser, and paste the code when prompted.
 Waiting for authorization...Authentication not complete!
 </pre>
@@ -133,7 +133,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="limit_cb" class="doc_header"><code>limit_cb</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L43" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>limit_cb</code>(<strong><code>rem</code></strong>, <strong><code>quota</code></strong>)</p>
+<h4 id="limit_cb" class="doc_header"><code>limit_cb</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L42" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>limit_cb</code>(<strong><code>rem</code></strong>, <strong><code>quota</code></strong>)</p>
 </blockquote>
 <p>Callback to warn user when close to using up hourly quota</p>
 
@@ -192,13 +192,6 @@ Waiting for authorization...Authentication not complete!
     
 <div class="cell border-box-sizing code_cell rendered">
 
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
 <div class="output_wrapper">
 <div class="output">
 
@@ -206,7 +199,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="print_event" class="doc_header"><code>print_event</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L81" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>print_event</code>(<strong><code>e</code></strong>, <strong><code>commits_counter</code></strong>)</p>
+<h4 id="print_event" class="doc_header"><code>print_event</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L68" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>print_event</code>(<strong><code>e</code></strong>, <strong><code>counter</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -240,8 +233,8 @@ Waiting for authorization...Authentication not complete!
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gen</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">fetch_events</span><span class="p">(</span><span class="n">types</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;IssuesEvent&#39;</span><span class="p">,</span><span class="s1">&#39;ReleaseEvent&#39;</span><span class="p">,</span><span class="s1">&#39;PullRequestEvent&#39;</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">islice</span><span class="p">(</span><span class="n">gen</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span> <span class="n">print_event</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">evts</span> <span class="o">=</span> <span class="n">load_sample_events</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">evts</span><span class="p">[:</span><span class="mi">100</span><span class="p">]:</span> <span class="n">print_event</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -254,26 +247,22 @@ Waiting for authorization...Authentication not complete!
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>📫 erfanmola opened issue # 26 on repo gonzaarcr/Fildem (&#34;Global Menu for Jetbrains Apps...&#34;)
-📫 baidua opened issue # 4436 on repo baidua/xmvavaciof (&#34;福州高端喝茶联系方式品茶外围上课...&#34;)
-📫 trnphocgqe opened issue # 1533 on repo trnphocgqe/tvtxtvxtv (&#34;关于江门哪里可以开加油发票-江门本地宝...&#34;)
-📫 limjinsun opened issue # 1 on repo DestyNova/advent_of_ (&#34;Day1 solution....&#34;)
-📫 fghyfuy36 opened issue # 113646 on repo ouyanxia2/hgmgmg (&#34;茂名教扑克牌手法...&#34;)
-📫 bbb5426647 opened issue # 1617 on repo bbb5426647/uuigzoyap (&#34;澳洲幸运5可靠吗...&#34;)
-📫 95sex opened issue # 614 on repo 95sex/ofrqtowfts (&#34;极速赛车微信的群app下注...&#34;)
-📫 Misly16 opened issue # 4 on repo ourcord/ourcord (&#34;Find fix for zlib install....&#34;)
-📫 hvva183 opened issue # 2355 on repo hvva183/huwchryzgn (&#34;关于济南哪里可以开具餐饮费发票-济南本地宝...&#34;)
-📫 hvva183 opened issue # 2345 on repo hvva183/ktaaonudut (&#34;关于成都哪里可以开具餐饮费发票-成都本地宝...&#34;)
-📫 bbb5426647 opened issue # 1625 on repo bbb5426647/dkegwbigm (&#34;安全的一分钟加拿大28微信群...&#34;)
-📫 ok0003 opened issue # 113642 on repo ouyanxia2/hgmgmg (&#34;关于)文山代开三甲医院诊断证明【╋薇/芯:xrj3781】...&#34;)
-⭐ TNelen closed issue # 242 on repo TNelen/BlackBox (&#34;change all icons to OMIcons...&#34;)
-📫 hvva183 opened issue # 2362 on repo hvva183/oowsiqqguw (&#34;关于宁波哪里可以开具餐饮费发票-宁波本地宝...&#34;)
-📫 hvva183 opened issue # 2355 on repo hvva183/qthmkvmgtf (&#34;关于杭州哪里可以开具餐饮费发票-杭州本地宝...&#34;)
-<span class="ansi-green-fg">✔ AliasIO closed a pull request on repo AliasIO/wappalyzer (&#34;Add Aimtell/Marketing automation...&#34;)</span>
-<span class="ansi-green-fg">✔ akemimeka closed a pull request on repo KarinaFS/battle-win (&#34;Mergeia a master e realiza melhoras no Readme...&#34;)</span>
-📫 hvva183 opened issue # 2371 on repo hvva183/hcigoxucgz (&#34;关于长春哪里可以开具餐饮费发票-长春本地宝...&#34;)
-📫 hvva183 opened issue # 2357 on repo hvva183/guubsqomuj (&#34;关于苏州哪里可以开具餐饮费发票-苏州本地宝...&#34;)
-📫 hvva183 opened issue # 2352 on repo hvva183/ltrubzaaap (&#34;关于沈阳哪里可以开具餐饮费发票-沈阳本地宝...&#34;)
+<pre><span class="ansi-green-fg">✔ Didier-D-crypto closed a pull request on repo Didier-D-crypto/Empl (&#34;Bump ini from 1.3.5 to 1.3.8...&#34;)</span>
+<span class="ansi-white-fg">💬 Holzhaus commented on issue # 168 on repo mixxxdj/website (&#34;Site of mixxx is out...&#34;)</span>
+<span class="ansi-white-fg">💬 reaperrr commented on issue # 18828 on repo OpenRA/OpenRA (&#34;InvalidDataException: nuyell1.aud is not a valid s...&#34;)</span>
+<span class="ansi-yellow-fg">✨ fantommohammed opened a pull request on repo fantommohammed/Mu-lt (&#34;Begin...&#34;)</span>
+<span class="ansi-white-fg">💬 0pdd commented on issue # 2 on repo proofit404/cruftbot (&#34;Initialize Django project....&#34;)</span>
+<span class="ansi-yellow-fg">✨ dependabot[bot] opened a pull request on repo Didier-D-crypto/Empl (&#34;Bump dot-prop from 4.2.0 to 4.2.1...&#34;)</span>
+📫 oulasvirta opened issue # 11 on repo oulasvirta/write-git (&#34;Title...&#34;)
+<span class="ansi-green-fg">✔ pull[bot] closed a pull request on repo sgrayban/github-read (&#34;[pull] master from anuraghazra:master...&#34;)</span>
+<span class="ansi-yellow-fg">✨ dseo3 opened a pull request on repo dseo3/GroupProject_T (&#34;Populating data inside of bookmark...&#34;)</span>
+<span class="ansi-yellow-fg">✨ snyk-bot opened a pull request on repo BlueCC8/iot-simulato (&#34;[Snyk] Security upgrade mongoose from 5.4.11 to 5....&#34;)</span>
+<span class="ansi-green-fg">✔ realpaliy closed a pull request on repo realpaliy/Messenger (&#34;Update SharedMediaVC.swift...&#34;)</span>
+<span class="ansi-yellow-fg">✨ schancel opened a pull request on repo cashweb/stamp (&#34;Ensure capacitor adds toolbar space...&#34;)</span>
+<span class="ansi-white-fg">💬 zjklee commented on issue # 407 on repo Handlebars-Net/Handl (&#34;Template compilation seems slower with 2.0...&#34;)</span>
+📫 ThomVivet opened issue # 452 on repo sahib/rmlint (&#34;Documentation: clarification about the -C / --xatt...&#34;)
+<span class="ansi-yellow-fg">✨ GeertvanHorrik opened a pull request on repo WildGums/Orchestra (&#34;GitHubSync update...&#34;)</span>
+<span class="ansi-white-fg">💬 bodhish commented on issue # 9 on repo jcsherin/package-tod (&#34;Todo CLI in Java...&#34;)</span>
 </pre>
 </div>
 </div>
@@ -295,7 +284,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="tail_events" class="doc_header"><code>tail_events</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L88" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tail_events</code>(<strong><code>evt</code></strong>)</p>
+<h4 id="tail_events" class="doc_header"><code>tail_events</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L75" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tail_events</code>(<strong><code>evt</code></strong>)</p>
 </blockquote>
 <p>Print events from <code>fetch_events</code> along with a counter of push events</p>
 
@@ -327,7 +316,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="watch_users" class="doc_header"><code>watch_users</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L96" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>watch_users</code>(<strong><code>evts</code></strong>)</p>
+<h4 id="watch_users" class="doc_header"><code>watch_users</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L83" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>watch_users</code>(<strong><code>evts</code></strong>)</p>
 </blockquote>
 <p>Print a table of the users with the most events</p>
 
@@ -359,7 +348,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="quad_logs" class="doc_header"><code>quad_logs</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L114" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>quad_logs</code>(<strong><code>evts</code></strong>)</p>
+<h4 id="quad_logs" class="doc_header"><code>quad_logs</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L101" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>quad_logs</code>(<strong><code>evts</code></strong>)</p>
 </blockquote>
 <p>Print 4 panels, showing most recent issues, commits, PRs, and releases</p>
 
@@ -391,7 +380,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="simple" class="doc_header"><code>simple</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L131" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>simple</code>(<strong><code>evts</code></strong>)</p>
+<h4 id="simple" class="doc_header"><code>simple</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L118" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>simple</code>(<strong><code>evts</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -415,6 +404,13 @@ Waiting for authorization...Authentication not complete!
     
 <div class="cell border-box-sizing code_cell rendered">
 
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
 <div class="output_wrapper">
 <div class="output">
 
@@ -422,7 +418,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="main" class="doc_header"><code>main</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L144" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>main</code>(<strong><code>mode</code></strong>:"Operation mode to run", <strong><code>include_bots</code></strong>:"Include bots (there's a lot of them!)"=<em><code>False</code></em>, <strong><code>types</code></strong>:"Comma-separated types of event to include (e.g PushEvent)"=<em><code>''</code></em>, <strong><code>filt</code></strong>:"Filtering method"=<em><code>None</code></em>, <strong><code>filtval</code></strong>:"Value to filter by (for <code>repo</code> use format <code>owner/repo</code>)"=<em><code>None</code></em>)</p>
+<h4 id="main" class="doc_header"><code>main</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L141" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>main</code>(<strong><code>mode</code></strong>:"Operation mode to run", <strong><code>include_bots</code></strong>:"Include bots (there's a lot of them!)"=<em><code>False</code></em>, <strong><code>types</code></strong>:"Comma-separated types of event to include (e.g PushEvent)"=<em><code>''</code></em>, <strong><code>filt</code></strong>:"Filtering method"=<em><code>None</code></em>, <strong><code>filtval</code></strong>:"Value to filter by (for <code>repo</code> use format <code>owner/repo</code>)"=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
