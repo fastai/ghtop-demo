@@ -75,6 +75,65 @@ nb_path: "nbs/00_ghtop.ipynb"
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">github_auth_device</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>First copy your one-time code: <span class="ansi-yellow-fg">61AD-1E91</span>
+Then visit https://github.com/login/device in your browser, and paste the code when prompted.
+Shall we try to open the link for you? [y/n] n
+Waiting for authorization.........</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-6-98c78f94ed41&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>github_auth_device<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-5-4b8e772fe7fd&gt;</span> in <span class="ansi-cyan-fg">github_auth_device</span><span class="ansi-blue-fg">(wb, n_polls)</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span> 
+<span class="ansi-green-intense-fg ansi-bold">     10</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Waiting for authorization...&#34;</span><span class="ansi-blue-fg">,</span> end<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 11</span><span class="ansi-red-fg">     </span>token <span class="ansi-blue-fg">=</span> auth<span class="ansi-blue-fg">.</span>wait<span class="ansi-blue-fg">(</span><span class="ansi-green-fg">lambda</span><span class="ansi-blue-fg">:</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;.&#39;</span><span class="ansi-blue-fg">,</span> end<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> n_polls<span class="ansi-blue-fg">=</span>n_polls<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     12</span>     <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> token<span class="ansi-blue-fg">:</span> <span class="ansi-green-fg">return</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Authentication not complete!&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     13</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Authenticated with GitHub&#34;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/git/ghapi/ghapi/auth.py</span> in <span class="ansi-cyan-fg">wait</span><span class="ansi-blue-fg">(self, cb, n_polls)</span>
+<span class="ansi-green-intense-fg ansi-bold">     76</span>         res <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>auth<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     77</span>         <span class="ansi-green-fg">if</span> cb<span class="ansi-blue-fg">:</span> cb<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 78</span><span class="ansi-red-fg">         </span>time<span class="ansi-blue-fg">.</span>sleep<span class="ansi-blue-fg">(</span>interval<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     79</span>     <span class="ansi-green-fg">return</span> res
+
+<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>When we run this we'll be shown a URL to visit and a code to enter in order to authenticate. Normally we'll be prompted to open a browser, and the function will wait for authentication to complete -- for demonstrating here we'll skip both of these steps:</p>
