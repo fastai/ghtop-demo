@@ -4,6 +4,9 @@ SRC = $(wildcard nbs/*.ipynb)
 
 all: ghtop docs
 
+pull:
+	git pull && nbdev_build_lib
+
 ghtop: $(SRC)
 	nbdev_build_lib
 	touch ghtop
