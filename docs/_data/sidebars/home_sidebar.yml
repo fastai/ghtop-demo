@@ -13,8 +13,11 @@ entries:
       title: ghtop API
       url: ghtop.html
     - output: web,pdf
-      title: Title
-      url: rich_test.html
+      title: Prototype Rich
+      url: Prototype_Rich.html
+    - output: web,pdf
+      title: Extensions To Rich
+      url: richext.html
     output: web
     title: ghtop
   output: web
