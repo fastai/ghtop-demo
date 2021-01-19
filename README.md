@@ -14,10 +14,9 @@ Either `pip install ghtop` or `conda install -c fastai ghtop`.
 
 Run `ghtop -h` to view the help:
 
-```bash
+```
 $ ghtop -h
-usage: ghtop [-h] [--include_bots] [--types TYPES] [--filt {user,repo,org}] [--filtval FILTVAL]
-             {tail,quad,users,simple}
+usage: ghtop [-h] [--include_bots] [--types TYPES] [--pause PAUSE] [--filt {users,repo,org}] [--filtval FILTVAL] {tail,quad,users,simple}
 
 positional arguments:
   {tail,quad,users,simple}  Operation mode to run
@@ -25,8 +24,9 @@ positional arguments:
 optional arguments:
   -h, --help                show this help message and exit
   --include_bots            Include bots (there is a lot of them!) (default: False)
-  --types TYPES             Comma-separated types of event to include (e.g PushEvent)
-  --filt {user,repo,org}    Filtering method
+  --types TYPES             Comma-separated types of event to include (e.g PushEvent) (default: )
+  --pause PAUSE             Number of seconds to pause between requests to the GitHub api (default: 0.4)
+  --filt {users,repo,org}   Filtering method
   --filtval FILTVAL         Value to filter by (for `repo` use format `owner/repo`)
 ```
 
@@ -36,7 +36,7 @@ There are 4 views you can choose: `ghtop simple`, `ghtop tail`, `ghtop quad`, or
 - `--types TYPES`: Optional comma-separated list of event types to include (defaults to all types). For a full list of types, see the GitHub [event types docs](https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/github-event-types)
 - `--filt` and `--filtval`: Optionally filter events to just those from one of: `user`, `repo`, or `org`, depending on `filt`. `filtval` is the value to filter by. See the [GitHub docs](https://docs.github.com/en/free-pro-team@latest/rest/reference/activity#list-public-events) for details on the public event API calls used.
 
-**Important note**: while running, `ghtop` will make about 5 API calls per second. GitHub has a quota of 5000 calls per hour. When there are 1000 calls left, `ghtop` will show a warning on every call.
+**Important note**: while running, `ghtop` will make about 2 API calls per second. GitHub has a quota of 5000 calls per hour. When there are 1000 calls left, `ghtop` will show a warning on every call.  Additionally, some screens will have a progress bar that displays the percent of your quota has been consumed.
 
 ### ghtop simple
 
