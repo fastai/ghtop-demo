@@ -4,7 +4,7 @@
 
 `ghtop` provides a number of views of all current public activity from all users across the entire GitHub platform. (Note that GitHub delays all events by five minutes.)
 
-<img width="800" src="https://user-images.githubusercontent.com/1483922/105071141-0c3ea580-5a39-11eb-8808-34952c0bf26d.gif" style="max-width: 800px">
+<img width="700" src="https://user-images.githubusercontent.com/1483922/105071141-0c3ea580-5a39-11eb-8808-34952c0bf26d.gif" style="max-width: 700px">
 
 ## Install
 
@@ -42,13 +42,13 @@ There are 4 views you can choose: `ghtop simple`, `ghtop tail`, `ghtop quad`, or
 
 A simple dump to your console of all events as they happen.
 
-<img src="https://user-images.githubusercontent.com/1483922/105074536-56298a80-5a3d-11eb-8e8c-32ba33e09405.png" width="800" style="max-width: 800px">
+<img src="https://user-images.githubusercontent.com/1483922/105074536-56298a80-5a3d-11eb-8e8c-32ba33e09405.png" width="700" style="max-width: 700px">
 
 ### ghtop tail
 
 Like `simple`, but only includes releases, issues and PRs (open, close, and comment events). A summary of the frequency of different kind of events along with sparklines are shown at the top of the screen.
 
-<img src="https://user-images.githubusercontent.com/1483922/105074448-398d5280-5a3d-11eb-9603-3def521d87e5.png" width="800" style="max-width: 800px">
+<img src="https://user-images.githubusercontent.com/1483922/105074448-398d5280-5a3d-11eb-9603-3def521d87e5.png" width="700" style="max-width: 700px">
 
 ### ghtop quad
 
