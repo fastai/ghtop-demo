@@ -4,7 +4,7 @@
 
 `ghtop` provides a number of views of all current public activity from all users across the entire GitHub platform. (Note that GitHub delays all events by five minutes.)
 
-<img width="600" src="https://user-images.githubusercontent.com/1483922/105071141-0c3ea580-5a39-11eb-8808-34952c0bf26d.gif" style="max-width: 600px">
+<img width="700" src="https://user-images.githubusercontent.com/1483922/105071141-0c3ea580-5a39-11eb-8808-34952c0bf26d.gif" style="max-width: 700px">
 
 ## Install
 
@@ -42,25 +42,25 @@ There are 4 views you can choose: `ghtop simple`, `ghtop tail`, `ghtop quad`, or
 
 A simple dump to your console of all events as they happen.
 
-<img src="https://user-images.githubusercontent.com/1483922/105074536-56298a80-5a3d-11eb-8e8c-32ba33e09405.png" width="600" style="max-width: 600px">
+<img src="https://user-images.githubusercontent.com/1483922/105074536-56298a80-5a3d-11eb-8e8c-32ba33e09405.png" width="700" style="max-width: 700px">
 
 ### ghtop tail
 
 Like `simple`, but only includes releases, issues and PRs (open, close, and comment events). A summary of the frequency of different kind of events along with sparklines are shown at the top of the screen.
 
-<img src="https://user-images.githubusercontent.com/1483922/105074448-398d5280-5a3d-11eb-9603-3def521d87e5.png" width="600" style="max-width: 600px">
+<img src="https://user-images.githubusercontent.com/1483922/105074448-398d5280-5a3d-11eb-9603-3def521d87e5.png" width="700" style="max-width: 700px">
 
 ### ghtop quad
 
 The same information as `tail`, but in a split window showing separately PRs, issues, pushes, and releases.
 
-<img src="https://user-images.githubusercontent.com/1483922/105074862-cb955b00-5a3d-11eb-99c5-3125bb98910b.png" width="600" style="max-width: 600px">
+<img src="https://user-images.githubusercontent.com/1483922/105074862-cb955b00-5a3d-11eb-99c5-3125bb98910b.png" width="700" style="max-width: 700px">
 
 ### ghtop users
 
 A summary of activity for the most active current users.
 
-<img src="https://user-images.githubusercontent.com/1483922/105075363-8887b780-5a3e-11eb-9f7a-627268ac465f.png" width="600" style="max-width: 600px">
+<img src="https://user-images.githubusercontent.com/1483922/105075363-8887b780-5a3e-11eb-9f7a-627268ac465f.png" width="700" style="max-width: 700px">
 
 ----
 
