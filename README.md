@@ -54,13 +54,13 @@ Like `simple`, but only includes releases, issues and PRs (open, close, and comm
 
 The same information as `tail`, but in a split window showing separately PRs, issues, pushes, and releases.
 
-<img src="https://user-images.githubusercontent.com/1483922/105074862-cb955b00-5a3d-11eb-99c5-3125bb98910b.png" width="800" style="max-width: 800px">
+<img src="https://user-images.githubusercontent.com/1483922/105074862-cb955b00-5a3d-11eb-99c5-3125bb98910b.png" width="700" style="max-width: 700px">
 
 ### ghtop users
 
 A summary of activity for the most active current users.
 
-<img src="https://user-images.githubusercontent.com/1483922/105075363-8887b780-5a3e-11eb-9f7a-627268ac465f.png" width="800" style="max-width: 800px">
+<img src="https://user-images.githubusercontent.com/1483922/105075363-8887b780-5a3e-11eb-9f7a-627268ac465f.png" width="700" style="max-width: 700px">
 
 ----
 
