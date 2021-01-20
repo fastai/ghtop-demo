@@ -76,7 +76,8 @@ optional arguments:
 <p>There are 4 views you can choose: <code>ghtop simple</code>, <code>ghtop tail</code>, <code>ghtop quad</code>, or <code>ghtop users</code>. Each are shown and described below. All views have the following options:</p>
 <ul>
 <li><code>--include_bots</code>: By default events that appear to be from bots are excluded. Add this flag to include them</li>
-<li><code>--types TYPES</code>: Optional comma-separated list of event types to include (defaults to all types). For a full list of types, see the GitHub <a href="https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/github-event-types">event types docs</a></li>
+<li><code>--types TYPES</code>: Optional comma-separated list of event types to include (defaults to all types). For a full list of types, see the GitHub <a href="https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/github-event-types">event types docs</a>
+--pause PAUSE             Number of seconds to pause between requests to the GitHub api (default: 0.4).  This is helpful if you want to get events less fre</li>
 <li><code>--filt</code> and <code>--filtval</code>: Optionally filter events to just those from one of: <code>user</code>, <code>repo</code>, or <code>org</code>, depending on <code>filt</code>. <code>filtval</code> is the value to filter by. See the <a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/activity#list-public-events">GitHub docs</a> for details on the public event API calls used.</li>
 </ul>
 <p><strong>Important note</strong>: while running, <a href="/ghtop.html"><code>ghtop</code></a> will make about 5 API calls per second. GitHub has a quota of 5000 calls per hour. When there are 1000 calls left, <a href="/ghtop.html"><code>ghtop</code></a> will show a warning on every call.</p>
