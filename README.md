@@ -14,19 +14,19 @@ Either `pip install ghtop` or `conda install -c fastai ghtop`.
 
 Run `ghtop -h` to view the help:
 
-```bash
+```
 $ ghtop -h
-usage: ghtop [-h] [--include_bots] [--types TYPES] [--filt {user,repo,org}] [--filtval FILTVAL]
-             {tail,quad,users,simple}
+usage: ghtop [-h] [--include_bots] [--types TYPES] [--pause PAUSE] [--filt {users,repo,org}] [--filtval FILTVAL] {tail,quad,users,simple}
 
 positional arguments:
   {tail,quad,users,simple}  Operation mode to run
 
 optional arguments:
   -h, --help                show this help message and exit
-  --include_bots            Include bots (there is a lot of them!) (default: False)
-  --types TYPES             Comma-separated types of event to include (e.g PushEvent)
-  --filt {user,repo,org}    Filtering method
+  --include_bots            Include bots (there's a lot of them!) (default: False)
+  --types TYPES             Comma-separated types of event to include (e.g PushEvent) (default: )
+  --pause PAUSE             Number of seconds to pause between requests to the GitHub api (default: 0.4)
+  --filt {users,repo,org}   Filtering method
   --filtval FILTVAL         Value to filter by (for `repo` use format `owner/repo`)
 ```
 

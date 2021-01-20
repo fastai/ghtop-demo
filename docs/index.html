@@ -59,20 +59,20 @@ nb_path: "nbs/index.ipynb"
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Run <code>ghtop -h</code> to view the help:</p>
-<div class="highlight"><pre><span></span>$ ghtop -h
-usage: ghtop <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>--include_bots<span class="o">]</span> <span class="o">[</span>--types TYPES<span class="o">]</span> <span class="o">[</span>--filt <span class="o">{</span>user,repo,org<span class="o">}]</span> <span class="o">[</span>--filtval FILTVAL<span class="o">]</span>
-             <span class="o">{</span>tail,quad,users,simple<span class="o">}</span>
+
+<pre><code>$ ghtop -h
+usage: ghtop [-h] [--include_bots] [--types TYPES] [--pause PAUSE] [--filt {users,repo,org}] [--filtval FILTVAL] {tail,quad,users,simple}
 
 positional arguments:
-  <span class="o">{</span>tail,quad,users,simple<span class="o">}</span>  Operation mode to run
+  {tail,quad,users,simple}  Operation mode to run
 
 optional arguments:
-  -h, --help                show this <span class="nb">help</span> message and <span class="nb">exit</span>
-  --include_bots            Include bots <span class="o">(</span>there is a lot of them!<span class="o">)</span> <span class="o">(</span>default: False<span class="o">)</span>
-  --types TYPES             Comma-separated types of event to include <span class="o">(</span>e.g PushEvent<span class="o">)</span>
-  --filt <span class="o">{</span>user,repo,org<span class="o">}</span>    Filtering method
-  --filtval FILTVAL         Value to filter by <span class="o">(</span><span class="k">for</span> <span class="sb">`</span>repo<span class="sb">`</span> use format <span class="sb">`</span>owner/repo<span class="sb">`</span><span class="o">)</span>
-</pre></div>
+  -h, --help                show this help message and exit
+  --include_bots            Include bots (there's a lot of them!) (default: False)
+  --types TYPES             Comma-separated types of event to include (e.g PushEvent) (default: )
+  --pause PAUSE             Number of seconds to pause between requests to the GitHub api (default: 0.4)
+  --filt {users,repo,org}   Filtering method
+  --filtval FILTVAL         Value to filter by (for `repo` use format `owner/repo`)</code></pre>
 <p>There are 4 views you can choose: <code>ghtop simple</code>, <code>ghtop tail</code>, <code>ghtop quad</code>, or <code>ghtop users</code>. Each are shown and described below. All views have the following options:</p>
 <ul>
 <li><code>--include_bots</code>: By default events that appear to be from bots are excluded. Add this flag to include them</li>
