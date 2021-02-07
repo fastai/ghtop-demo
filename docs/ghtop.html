@@ -64,7 +64,7 @@ nb_path: "nbs/00_ghtop.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_sparklines" class="doc_header"><code>get_sparklines</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L25" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_sparklines</code>()</p>
+<h4 id="get_sparklines" class="doc_header"><code>get_sparklines</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L24" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_sparklines</code>()</p>
 </blockquote>
 
 </div>
@@ -87,31 +87,6 @@ nb_path: "nbs/00_ghtop.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="github_auth_device" class="doc_header"><code>github_auth_device</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L42" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>github_auth_device</code>(<strong><code>wb</code></strong>=<em><code>''</code></em>, <strong><code>n_polls</code></strong>=<em><code>9999</code></em>)</p>
-</blockquote>
-<p>Authenticate with GitHub, polling up to <code>n_polls</code> times to wait for completion</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
 
 </div>
     {% endraw %}
@@ -125,51 +100,11 @@ nb_path: "nbs/00_ghtop.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When we run this we'll be shown a URL to visit and a code to enter in order to authenticate. Normally we'll be prompted to open a browser, and the function will wait for authentication to complete -- for demonstrating here we'll skip both of these steps:</p>
+<p>When creating <code>GhApi</code> we can pass a callback which will be called after each API operation. In this case, we use it to warn the user when their quota is getting low.</p>
 
 </div>
 </div>
 </div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">github_auth_device</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span><span class="n">n_polls</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>First copy your one-time code: <span class="ansi-yellow-fg">23B7-CCDD</span>
-Then visit https://github.com/login/device in your browser, and paste the code when prompted.
-Waiting for authorization...Authentication not complete!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -181,7 +116,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="limit_cb" class="doc_header"><code>limit_cb</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L62" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>limit_cb</code>(<strong><code>rem</code></strong>, <strong><code>quota</code></strong>)</p>
+<h4 id="limit_cb" class="doc_header"><code>limit_cb</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L46" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>limit_cb</code>(<strong><code>rem</code></strong>, <strong><code>quota</code></strong>)</p>
 </blockquote>
 <p>Callback to warn user when close to using up hourly quota</p>
 
@@ -215,27 +150,6 @@ Waiting for authorization...Authentication not complete!
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>When creating <code>GhApi</code> we can pass a callback which will be called after each API operation. In this case, we use it to warn the user when their quota is getting low.</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -247,91 +161,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="print_event" class="doc_header"><code>print_event</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L88" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>print_event</code>(<strong><code>e</code></strong>, <strong><code>counter</code></strong>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can pretty print a selection of event types using <a href="/ghtop.html#print_event"><code>print_event</code></a>, e.g:</p>
-
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">evts</span><span class="p">[:</span><span class="mi">100</span><span class="p">]:</span> <span class="n">print_event</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-green-fg">✔ Didier-D-crypto closed a pull request on repo Didier-D-crypto/Empl (&#34;Bump ini from 1.3.5 to 1.3.8...&#34;)</span>
-<span class="ansi-white-fg">💬 Holzhaus commented on issue # 168 on repo mixxxdj/website (&#34;Site of mixxx is out...&#34;)</span>
-<span class="ansi-white-fg">💬 reaperrr commented on issue # 18828 on repo OpenRA/OpenRA (&#34;InvalidDataException: nuyell1.aud is not a valid s...&#34;)</span>
-<span class="ansi-yellow-fg">✨ fantommohammed opened a pull request on repo fantommohammed/Mu-lt (&#34;Begin...&#34;)</span>
-<span class="ansi-white-fg">💬 0pdd commented on issue # 2 on repo proofit404/cruftbot (&#34;Initialize Django project....&#34;)</span>
-<span class="ansi-yellow-fg">✨ dependabot[bot] opened a pull request on repo Didier-D-crypto/Empl (&#34;Bump dot-prop from 4.2.0 to 4.2.1...&#34;)</span>
-📫 oulasvirta opened issue # 11 on repo oulasvirta/write-git (&#34;Title...&#34;)
-<span class="ansi-green-fg">✔ pull[bot] closed a pull request on repo sgrayban/github-read (&#34;[pull] master from anuraghazra:master...&#34;)</span>
-<span class="ansi-yellow-fg">✨ dseo3 opened a pull request on repo dseo3/GroupProject_T (&#34;Populating data inside of bookmark...&#34;)</span>
-<span class="ansi-yellow-fg">✨ snyk-bot opened a pull request on repo BlueCC8/iot-simulato (&#34;[Snyk] Security upgrade mongoose from 5.4.11 to 5....&#34;)</span>
-<span class="ansi-green-fg">✔ realpaliy closed a pull request on repo realpaliy/Messenger (&#34;Update SharedMediaVC.swift...&#34;)</span>
-<span class="ansi-yellow-fg">✨ schancel opened a pull request on repo cashweb/stamp (&#34;Ensure capacitor adds toolbar space...&#34;)</span>
-<span class="ansi-white-fg">💬 zjklee commented on issue # 407 on repo Handlebars-Net/Handl (&#34;Template compilation seems slower with 2.0...&#34;)</span>
-📫 ThomVivet opened issue # 452 on repo sahib/rmlint (&#34;Documentation: clarification about the -C / --xatt...&#34;)
-<span class="ansi-yellow-fg">✨ GeertvanHorrik opened a pull request on repo WildGums/Orchestra (&#34;GitHubSync update...&#34;)</span>
-<span class="ansi-white-fg">💬 bodhish commented on issue # 9 on repo jcsherin/package-tod (&#34;Todo CLI in Java...&#34;)</span>
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="pct_comp" class="doc_header"><code>pct_comp</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L95" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>pct_comp</code>(<strong><code>api</code></strong>)</p>
+<h4 id="pct_comp" class="doc_header"><code>pct_comp</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L52" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>pct_comp</code>(<strong><code>api</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -362,7 +192,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="tail_events" class="doc_header"><code>tail_events</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L98" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tail_events</code>(<strong><code>evt</code></strong>, <strong><code>api</code></strong>)</p>
+<h4 id="tail_events" class="doc_header"><code>tail_events</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L55" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>tail_events</code>(<strong><code>evt</code></strong>, <strong><code>api</code></strong>)</p>
 </blockquote>
 <p>Print events from <code>fetch_events</code> along with a counter of push events</p>
 
@@ -401,7 +231,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="watch_users" class="doc_header"><code>watch_users</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L120" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>watch_users</code>(<strong><code>evts</code></strong>, <strong><code>api</code></strong>)</p>
+<h4 id="watch_users" class="doc_header"><code>watch_users</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L77" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>watch_users</code>(<strong><code>evts</code></strong>, <strong><code>api</code></strong>)</p>
 </blockquote>
 <p>Print a table of the users with the most events</p>
 
@@ -433,7 +263,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="quad_logs" class="doc_header"><code>quad_logs</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L148" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>quad_logs</code>(<strong><code>evts</code></strong>, <strong><code>api</code></strong>)</p>
+<h4 id="quad_logs" class="doc_header"><code>quad_logs</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L105" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>quad_logs</code>(<strong><code>evts</code></strong>, <strong><code>api</code></strong>)</p>
 </blockquote>
 <p>Print 4 panels, showing most recent issues, commits, PRs, and releases</p>
 
@@ -465,7 +295,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="simple" class="doc_header"><code>simple</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L167" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>simple</code>(<strong><code>evts</code></strong>, <strong><code>api</code></strong>)</p>
+<h4 id="simple" class="doc_header"><code>simple</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L124" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>simple</code>(<strong><code>evts</code></strong>, <strong><code>api</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -503,7 +333,7 @@ Waiting for authorization...Authentication not complete!
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="main" class="doc_header"><code>main</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L190" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>main</code>(<strong><code>mode</code></strong>:"Operation mode to run", <strong><code>include_bots</code></strong>:"Include bots (there's a lot of them!)"=<em><code>False</code></em>, <strong><code>types</code></strong>:"Comma-separated types of event to include (e.g PushEvent)"=<em><code>''</code></em>, <strong><code>pause</code></strong>:"Number of seconds to pause between requests to the GitHub api"=<em><code>0.4</code></em>, <strong><code>filt</code></strong>:"Filtering method"=<em><code>None</code></em>, <strong><code>filtval</code></strong>:"Value to filter by (for <code>repo</code> use format <code>owner/repo</code>)"=<em><code>None</code></em>)</p>
+<h4 id="main" class="doc_header"><code>main</code><a href="https://github.com/fastai/ghtop/tree/master/ghtop/ghtop.py#L147" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>main</code>(<strong><code>mode</code></strong>:"Operation mode to run", <strong><code>include_bots</code></strong>:"Include bots (there's a lot of them!)"=<em><code>False</code></em>, <strong><code>types</code></strong>:"Comma-separated types of event to include (e.g PushEvent)"=<em><code>''</code></em>, <strong><code>pause</code></strong>:"Number of seconds to pause between requests to the GitHub api"=<em><code>0.4</code></em>, <strong><code>filt</code></strong>:"Filtering method"=<em><code>None</code></em>, <strong><code>filtval</code></strong>:"Value to filter by (for <code>repo</code> use format <code>owner/repo</code>)"=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
