@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.142">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="See what’s happening on GitHub in real time (also helpful if you need to use up your API quota as quickly as possible).">
+
+<title>ghtop</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="ghtop">
+<meta property="og:description" content="See what's happening on GitHub in real time (also helpful if you need to use up your API quota as quickly as possible).">
+<meta property="og:site-name" content="ghtop">
+<meta name="twitter:title" content="ghtop">
+<meta name="twitter:description" content="See what's happening on GitHub in real time (also helpful if you need to use up your API quota as quickly as possible).">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">ghtop</span>
+    </a>
+  </div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">ghtop</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">ghtop</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ghtop.html" class="sidebar-item-text sidebar-link">ghtop API</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./richext.html" class="sidebar-item-text sidebar-link">Extensions To rich</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#install" id="toc-install" class="nav-link active" data-scroll-target="#install">Install</a></li>
+  <li><a href="#how-to-use" id="toc-how-to-use" class="nav-link" data-scroll-target="#how-to-use">How to use</a>
+  <ul class="collapse">
+  <li><a href="#ghtop-simple" id="toc-ghtop-simple" class="nav-link" data-scroll-target="#ghtop-simple">ghtop simple</a></li>
+  <li><a href="#ghtop-tail" id="toc-ghtop-tail" class="nav-link" data-scroll-target="#ghtop-tail">ghtop tail</a></li>
+  <li><a href="#ghtop-quad" id="toc-ghtop-quad" class="nav-link" data-scroll-target="#ghtop-quad">ghtop quad</a></li>
+  <li><a href="#ghtop-users" id="toc-ghtop-users" class="nav-link" data-scroll-target="#ghtop-users">ghtop users</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fastai/ghtop/tree/master/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">ghtop</h1>
+</div>
+
+<div>
+  <div class="description">
+    See what’s happening on GitHub in real time (also helpful if you need to use up your API quota as quickly as possible).
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
+<p><code>ghtop</code> provides a number of views of all current public activity from all users across the entire GitHub platform. (Note that GitHub delays all events by five minutes.)</p>
+<p><img width="650" src="https://user-images.githubusercontent.com/1483922/105071141-0c3ea580-5a39-11eb-8808-34952c0bf26d.gif" align="center"></p>
+<section id="install" class="level2">
+<h2 class="anchored" data-anchor-id="install">Install</h2>
+<p>Either <code>pip install ghtop</code> or <code>conda install -c fastai ghtop</code>.</p>
+</section>
+<section id="how-to-use" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-use">How to use</h2>
+<p>Run <code>ghtop -h</code> to view the help:</p>
+<pre><code>$ ghtop -h
+usage: ghtop [-h] [--include_bots] [--types TYPES] [--pause PAUSE] [--filt {users,repo,org}] [--filtval FILTVAL] {tail,quad,users,simple}
+
+positional arguments:
+  {tail,quad,users,simple}  Operation mode to run
+
+optional arguments:
+  -h, --help                show this help message and exit
+  --include_bots            Include bots (there's a lot of them!) (default: False)
+  --types TYPES             Comma-separated types of event to include (e.g PushEvent) (default: )
+  --pause PAUSE             Number of seconds to pause between requests to the GitHub api (default: 0.4)
+  --filt {users,repo,org}   Filtering method
+  --filtval FILTVAL         Value to filter by (for `repo` use format `owner/repo`)</code></pre>
+<p>There are 4 views you can choose: <code>ghtop simple</code>, <code>ghtop tail</code>, <code>ghtop quad</code>, or <code>ghtop users</code>. Each are shown and described below. All views have the following options:</p>
+<ul>
+<li><code>--include_bots</code>: By default events that appear to be from bots are excluded. Add this flag to include them</li>
+<li><code>--types TYPES</code>: Optional comma-separated list of event types to include (defaults to all types). For a full list of types, see the GitHub <a href="https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/github-event-types">event types docs</a></li>
+<li><code>--pause PAUSE</code>: Number of seconds to pause between requests to the GitHub api (default: 0.4). It is helpful to adjust this number if you want to get events more or less frequently. For example, if you are filtering all events by an org, then you likely want to pause for a longer period of time than the default.</li>
+<li><code>--filt</code> and <code>--filtval</code>: Optionally filter events to just those from one of: <code>user</code>, <code>repo</code>, or <code>org</code>, depending on <code>filt</code>. <code>filtval</code> is the value to filter by. See the <a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/activity#list-public-events">GitHub docs</a> for details on the public event API calls used.</li>
+</ul>
+<p><strong>Important note</strong>: while running, <code>ghtop</code> will make about 5 API calls per second. GitHub has a quota of 5000 calls per hour. When there are 1000 calls left, <code>ghtop</code> will show a warning on every call.</p>
+<section id="ghtop-simple" class="level3">
+<h3 class="anchored" data-anchor-id="ghtop-simple">ghtop simple</h3>
+<p>A simple dump to your console of all events as they happen.</p>
+<p><img src="https://user-images.githubusercontent.com/1483922/105074536-56298a80-5a3d-11eb-8e8c-32ba33e09405.png" width="650" align="center"></p>
+</section>
+<section id="ghtop-tail" class="level3">
+<h3 class="anchored" data-anchor-id="ghtop-tail">ghtop tail</h3>
+<p>Like <a href="https://ghtop.fast.ai/ghtop.html#simple"><code>simple</code></a>, but only includes releases, issues and PRs (open, close, and comment events). A summary of the frequency of different kind of events along with sparklines are shown at the top of the screen.</p>
+<p><img src="https://user-images.githubusercontent.com/1483922/105074448-398d5280-5a3d-11eb-9603-3def521d87e5.png" width="650" align="center"></p>
+</section>
+<section id="ghtop-quad" class="level3">
+<h3 class="anchored" data-anchor-id="ghtop-quad">ghtop quad</h3>
+<p>The same information as <code>tail</code>, but in a split window showing separately PRs, issues, pushes, and releases.</p>
+<p><img src="https://user-images.githubusercontent.com/1483922/105074862-cb955b00-5a3d-11eb-99c5-3125bb98910b.png" width="650" align="center"></p>
+</section>
+<section id="ghtop-users" class="level3">
+<h3 class="anchored" data-anchor-id="ghtop-users">ghtop users</h3>
+<p>A summary of activity for the most active current users.</p>
+<p><img src="https://user-images.githubusercontent.com/1483922/105075363-8887b780-5a3e-11eb-9f7a-627268ac465f.png" width="650" align="center"></p>
+<hr>
+<p>Shared under the MIT license with ♥ by <span class="citation" data-cites="nat">@nat</span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
