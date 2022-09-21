@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "ghtop"
+  site-url: "https://ghtop.fast.ai/"
+  description: "See what is happening on GitHub in real time"
+  repo-branch: master
+  repo-url: "https://github.com/fastai/ghtop/tree/master/"
